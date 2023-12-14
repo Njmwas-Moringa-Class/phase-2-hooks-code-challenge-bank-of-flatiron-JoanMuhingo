@@ -1,11 +1,22 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList() {
+function TransactionsList({data, error, searchTerm}) {
+  if (error) {
+    return <div>Error fetching data: {error.message}</div>;
+  }
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+  const filterData = searchTerm
+  ? data.filter((transaction) =>
+      transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  : data;
   return (
     <table className="ui celled striped padded table">
       <tbody>
-        <tr>
+        <tr> 
           <th>
             <h3 className="ui center aligned header">Date</h3>
           </th>
@@ -19,7 +30,16 @@ function TransactionsList() {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render a list of <Transaction> components here */}
+        {filterData.map((transaction) => (
+          <Transaction
+            key={transaction.id}
+            id={transaction.id}
+            date={transaction.date}
+            description={transaction.description}
+            category={transaction.category}
+            amount={transaction.amount}
+          />
+        ))}
       </tbody>
     </table>
   );

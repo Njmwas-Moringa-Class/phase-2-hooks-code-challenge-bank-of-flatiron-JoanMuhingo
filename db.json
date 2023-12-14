@@ -83,6 +83,34 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2023-12-14",
+      "description": "paycheck",
+      "category": "income",
+      "amount": "0.8",
+      "id": 13
+    },
+    {
+      "date": "2023-12-14",
+      "description": "paycheck",
+      "category": "income",
+      "amount": "100",
+      "id": 14
+    },
+    {
+      "date": "2023-12-14",
+      "description": "paycheck",
+      "category": "income",
+      "amount": "100",
+      "id": 15
+    },
+    {
+      "date": "2023-12-14",
+      "description": "paycheck",
+      "category": "income",
+      "amount": "100",
+      "id": 16
     }
   ]
 }
